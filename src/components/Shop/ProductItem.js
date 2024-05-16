@@ -11,7 +11,7 @@ const ProductItem = (props) => {
   const addToCartHandler=()=>{
     const newTotalQuantity=cart.totalQuantity+1;
 
-    const updatedItems=cart.items.slice();
+    const updatedItems= cart.items ? cart.items.slice() : [];
     const existingItem=updatedItems.find((item)=>item.id===id);
     if(existingItem){
       const updatedItem={...existingItem};
